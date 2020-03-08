@@ -1,0 +1,143 @@
+" TIPS: use :verbose nmap xxx to list key maps
+
+" set mapleader
+" and exchange ; and , when repeating f or F
+let mapleader = ";" 
+nnoremap	;	,
+nnoremap	,	;
+
+" movement
+inoremap	<c-b>	<left>
+inoremap	<c-f>	<right>
+inoremap	<c-a>	<c-o>^
+inoremap	<c-e>	<end>
+inoremap	<c-g>	<c-left>
+inoremap	<c-l>	<c-right>
+
+cnoremap	<c-b>	<left>
+cnoremap	<c-f>	<right>
+cnoremap	<c-a>	<c-o>^
+cnoremap	<c-e>	<end>
+cnoremap	<c-g>	<c-left>
+cnoremap	<c-l>	<c-right>
+
+" window movement
+nnoremap	<leader>w	<c-w>
+"" TIPS: moving between windows, see :help CTRAL-W
+""       <c-w>j -- move down
+""       <c-w>k -- move up
+""       <c-w>h -- move left
+""       <c-w>l -- move right
+""       <c-w>w -- moving around
+""       <c-w>n -- new empty window
+""       <c-w>o -- current window only
+""       <c-w>c -- close current window
+""       <c-w>s -- :split
+""       <c-w>v -- :vsplit
+""       <c-w>N^ -- :split #N
+""       :unhide -- edit all buffer files
+
+
+" input
+"" to support <c-c> trigger the InsertLeave autocmd
+inoremap    <c-c>   <esc>
+nnoremap	<enter>	O<esc>
+nnoremap	<space>	i <esc>l
+nnoremap	<tab>	o<esc>
+"" input real tab in expandtab is set
+inoremap	<leader><tab>	<c-v><tab>
+nnoremap	<c-j>	i<cr><esc>
+"" TIPS: use <c-r>% to insert current filename, 
+""       use <c-r>=expression to use expression
+" add quote to worlds
+vnoremap	"	di"<c-r>""<esc>
+vnoremap	'	di'<c-r>"'<esc>
+
+
+
+" file("fsd sdfsd" )
+"" ZX save
+nnoremap	ZX	:w<cr>
+"" ZA quit all with asking
+nnoremap	ZA	:qa<cr>
+" ZQ to only quite current tab or buffer
+nnoremap	ZQ	:q!<cr>
+"" ZZ save and quit remove from buffer (for tab as buffer user)
+"nnoremap	ZZ	:wq!<cr> :bd #<cr>
+"" ZQ close without save and remove from buffer (for tab as buffer user)
+"nnoremap	ZQ	:q!<cr> :bd #<cr> 
+nnoremap	<leader>s	:saveas <c-r>=expand('%:p')<cr>
+
+" buffer
+nnoremap	<c-n>	:bn<cr>
+nnoremap	<c-p>	:bp<cr>
+nnoremap	<leader>e	:e 
+nnoremap	<leader>q	:bd<cr>
+"" TIPS: in `:e`, use <c-d> to show all alternatives,
+""       and <tab> to select.
+"" TIPS:
+""       :ls -- list buffer
+
+
+" tab
+"" TIPS: tab means different layout, you can treat it
+""       as different workspace. If you want to edit
+""       multiple file, use buffer instead.
+"" openfile under the curser
+nnoremap	gff	<c-w>gf
+nnoremap	<leader>t 	:tabnew 
+nnoremap	<c-h>	:tabp<cr>
+nnoremap	<c-l>	:tabn<cr>
+nnoremap	<leader>tc	:tabclose<cr>
+nnoremap	<leader>to	:tabonly<cr>
+nnoremap	<leader>tm	:tabmove
+"" TIPS: `vim -p file1 file2` to open files in tabs
+
+" buffer
+nnoremap	<leader>d	:bd<cr>
+"" TIPS: use gf to open file under the curser
+
+" fast copy
+nnoremap	Y	y$
+nnoremap	y"	yi"
+nnoremap	Y"	ya"
+nnoremap	y'	yi'
+nnoremap	Y'	ya'
+nnoremap	y)	yi)
+nnoremap	Y)	ya)
+nnoremap	y]	yi]
+nnoremap	Y]	ya]
+nnoremap	y<	yi<
+nnoremap	Y<	ya>
+nnoremap	y{	yi{
+nnoremap	Y{	ya{
+
+
+""""""""""""""""""""
+" vim command shortcuts
+""""""""""""""""""""
+" quickfix
+nnoremap <leader>f :cw 10<cr>
+
+
+" view
+nnoremap    <leader>mv :mkview 
+nnoremap    <leader>ld :loadview 
+
+
+" fold
+nnoremap    <leader>fd :set foldenable<cr>:set foldmethod=indent<cr>
+
+" session
+nnoremap    <leader>S   :mksession! ~/vim..vim<left><left><left><left>
+nnoremap    <leader>L   :source 
+"" load session: vim -S work.vim
+
+" searching and replace
+"" replace
+nnoremap <leader>rp :.,$sm///gci<left><left><left><left><left>
+vnoremap <leader>rp :sm///gci<left><left><left><left><left>
+"" no highlight after search
+nnoremap <leader>h :nohls<cr>
+"" find the word under the cursor
+nnoremap <leader>lv :lv /<c-r>=expand("<cword>")<cr>/ %<cr>:lw 10<cr>
