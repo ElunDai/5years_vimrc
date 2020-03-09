@@ -2,7 +2,14 @@
 " Elun Dai's vimrc script.
 " copyright©Elundai 2015-2020
 " 
-" 
+" USAGE:
+" 1. install plugins
+"    vim
+"    :PlugInstall
+" 2. install ctags
+"    apt install ctags
+" 3. install vim-gnome for using + clipboard
+"    apt install vim-gnome
 """"""""""""""""""""
 
 
@@ -32,7 +39,7 @@ autocmd! bufwritepost .vimrc*,vimrc* source ~/.vimrc
 """"""""""""""""""""
 
 " set global clipbord
-set clipboard^=unnamed,unnamedplus
+set clipboard=unnamed,unnamedplus
 
 " encodings
 set encoding=utf-8
@@ -50,7 +57,7 @@ set timeoutlen=500  " time to wait short cut
 
 " line break
 "set textwidth=80 "auto new line
-set nowrap "avoid auto change line
+"set nowrap "avoid auto change line
 
 """"""""""""""""""""
 " buffers

@@ -14,7 +14,11 @@ Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
-
+Plug 'noahfrederick/vim-skeleton'
+Plug 'mileszs/ack.vim'
+Plug 'romainl/vim-qf'
+"Plug 'kkoomen/vim-doge'
+" tpope/vim-unimpaired
 " schemes
 "Plug 'vimscript/molokai'
 "Plug 'rakr/vim-one'
@@ -189,5 +193,37 @@ nmap <F8> :TagbarToggle<CR>
 " https://github.com/ludovicchabant/vim-gutentags
 " :call pathogen#helptags()
 " :help gutentags
+let gutentags_define_advanced_commands = 1  " debug mode
 let g:gutentags_enabled = 0
 nnoremap <leader>u :let g:gutentags_enabled=1<cr>:GutentagsUpdate<cr>
+
+""""""""""""""""""""
+" vim-skeleton
+""""""""""""""""""""
+" :help skeleton-commands
+" :help skeleton-config
+" Use the :SkelEdit[!] command for quick access to the currently loaded template file (or a specific template if specified).
+" Use the :SkelInsert[!] command to load a specific template or force insertion of a template when automatic insertion wouldn't normally be triggered.
+" @FILENAME@
+" @BASENAME@
+" @DATE@
+" @YEAR@
+" @CURSUR@
+" @AUTHOR@
+
+""""""""""""""""""""
+" ack
+""""""""""""""""""""
+" install ack first
+" Ubuntu: apt install ack-grep
+" others: https://beyondgrep.com/install/ 
+"nnoremap	<leader>a	:AckWindow<space><c-r>=expand("<cword>")<cr><space>
+nnoremap	<leader>A	:Ack<space><c-r>=expand("<cword>")<cr><space>
+
+
+""""""""""""""""""""
+" vim-qf
+""""""""""""""""""""
+nmap	<leader>f	<Plug>(qf_qf_toggle_stay)
+nmap	<leader>l	<Plug>(qf_loc_toggle)
+nmap	<leader>j	<Plug>(qf_qf_switch)
