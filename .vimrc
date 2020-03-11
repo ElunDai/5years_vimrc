@@ -171,3 +171,17 @@ augroup filetypedetect
     autocmd BufRead,BufNewFile *.{md,mkd,markdown} set filetype=markdown
 augroup END
 
+
+""""""""""""""""""""
+" encodings
+""""""""""""""""""""
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+
+""""""""""""""""""""
+" font
+""""""""""""""""""""
+" TIPS: to set font in gvim 
+"       you can set by Edit -> Select Font; and copy from Edit -> Settings window.
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
