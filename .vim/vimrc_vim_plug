@@ -17,7 +17,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'noahfrederick/vim-skeleton'
 Plug 'mileszs/ack.vim'
 Plug 'romainl/vim-qf'
-"Plug 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 Plug 'ycm-core/YouCompleteMe'
 "Plug 'kkoomen/vim-doge'
 " tpope/vim-unimpaired
@@ -254,15 +254,15 @@ let g:qf_max_height = 8
 " to show urrent syntastic information :SyntasticInfo
 
 " settings
-"set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_aggregate_errors = 1
-" let g:syntastic_enable_balloons = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_enable_balloons = 1
 " let g:syntastic_debug = 33
 
 " :help syntastic
@@ -272,7 +272,9 @@ let g:qf_max_height = 8
 
 "" python
 "" pip install flake8
+
 "" c++
+let g:syntastic_cpp_checkers = []  " disable, use YCM instead
 " let g:syntastic_cpp_checkers=['gcc']
 " let g:syntastic_cpp_checkers = ['cpplint']
 " let g:syntastic_cpp_check_header = 0
@@ -280,6 +282,7 @@ let g:qf_max_height = 8
 "let g:syntastic_cpp_cpplint_args = ' -std=c++11 -stdlib=libc++ -I/usr/include/c++'
 
 "" c
+let g:syntastic_c_checkers = []  " disable, use YCM instead
 " let g:syntastic_c_check_header = 0
 " let g:syntastic_c_checkers = ['clang_tidy', 'gcc']
 " let g:syntastic_c_clang_tidy_args= ' -std=c++11 -stdlib=libc++ -I/usr/include'
