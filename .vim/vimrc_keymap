@@ -3,26 +3,26 @@
 " set mapleader
 " and exchange ; and , when repeating f or F
 let mapleader = ";" 
-nnoremap	;	,
-nnoremap	,	;
+noremap ;   ,
+noremap ,   ;
 
 " movement
-inoremap	<c-b>	<left>
-inoremap	<c-f>	<right>
-inoremap	<c-a>	<c-o>^
-inoremap	<c-e>	<end>
-inoremap	<c-g>	<c-left>
-inoremap	<c-l>	<c-right>
+inoremap    <c-b>   <left>
+inoremap    <c-f>   <right>
+inoremap    <c-a>   <c-o>^
+inoremap    <c-e>   <end>
+inoremap    <c-g>   <c-left>
+inoremap    <c-l>   <c-right>
 
-cnoremap	<c-b>	<left>
-cnoremap	<c-f>	<right>
-cnoremap	<c-a>	<home>
-cnoremap	<c-e>	<end>
-cnoremap	<c-g>	<c-left>
-cnoremap	<c-l>	<c-right>
+cnoremap    <c-b>   <left>
+cnoremap    <c-f>   <right>
+cnoremap    <c-a>   <home>
+cnoremap    <c-e>   <end>
+cnoremap    <c-g>   <c-left>
+cnoremap    <c-l>   <c-right>
 
 " window movement
-nnoremap	<leader>w	<c-w>
+nnoremap    <leader>w   <c-w>
 "" TIPS: moving between windows, see :help CTRAL-W
 ""       <c-w>j -- move down
 ""       <c-w>k -- move up
@@ -41,37 +41,38 @@ nnoremap	<leader>w	<c-w>
 " input
 "" to support <c-c> trigger the InsertLeave autocmd
 inoremap    <c-c>   <esc>
-nnoremap	<space>	i <esc>l
-nnoremap	<tab>	o<esc>
+nnoremap    <space> i <esc>l
+nnoremap    <tab>   o<esc>
 "" input real tab in expandtab is set
-inoremap	<leader><tab>	<c-v><tab>
-nnoremap	<c-j>	i<cr><esc>
+inoremap    <leader><tab>   <c-v><tab>
+nnoremap    <c-j>   i<cr><esc>
 "" TIPS: use <c-r>% to insert current filename, 
 ""       use <c-r>=expression to use expression
 " add quote to worlds
-vnoremap	"	di"<c-r>""<esc>
-vnoremap	'	di'<c-r>"'<esc>
+vnoremap    "   di"<c-r>""<esc>
+vnoremap    '   di'<c-r>"'<esc>
+vnoremap    (   di(<c-r>")<esc>
+vnoremap    [   di[<c-r>"]<esc>
+vnoremap    {   di{<c-r>"}<esc>
 
 
-
-" file("fsd sdfsd" )
 "" ZX save
-nnoremap	ZX	:w<cr>
+nnoremap    ZX  :w<cr>
 "" ZA quit all with asking
-nnoremap	ZA	:qa<cr>
+nnoremap    ZA  :qa<cr>
 " ZQ to only quite current tab or buffer
-nnoremap	ZQ	:q!<cr>
+nnoremap    ZQ  :q!<cr>
 "" ZZ save and quit remove from buffer (for tab as buffer user)
-"nnoremap	ZZ	:wq!<cr> :bd #<cr>
+"nnoremap   ZZ  :wq!<cr> :bd #<cr>
 "" ZQ close without save and remove from buffer (for tab as buffer user)
-"nnoremap	ZQ	:q!<cr> :bd #<cr> 
-nnoremap	<leader>s	:saveas <c-r>=expand('%:p')<cr>
+"nnoremap   ZQ  :q!<cr> :bd #<cr> 
+nnoremap    <leader>s   :saveas <c-r>=expand('%:p')<cr>
 
 " buffer
-nnoremap	<c-n>	:bn<cr>
-nnoremap	<c-p>	:bp<cr>
-nnoremap	<leader>e	:e 
-nnoremap	<leader>q	:bd<cr>
+nnoremap    <c-n>   :bn<cr>
+nnoremap    <c-p>   :bp<cr>
+nnoremap    <leader>e   :e 
+nnoremap    <leader>q   :bd<cr>
 "" TIPS: in `:e`, use <c-d> to show all alternatives,
 ""       and <tab> to select.
 "" TIPS:
@@ -83,31 +84,31 @@ nnoremap	<leader>q	:bd<cr>
 ""       as different workspace. If you want to edit
 ""       multiple file, use buffer instead.
 "" openfile under the curser
-"nnoremap	gff	<c-w>gf
-nnoremap	<leader>t 	:tabnew 
-nnoremap	<c-h>	:tabp<cr>
-nnoremap	<c-l>	:tabn<cr>
-nnoremap	<leader>tc	:tabclose<cr>
-nnoremap	<leader>to	:tabonly<cr>
-nnoremap	<leader>tm	:tabmove
+"nnoremap   gff <c-w>gf
+nnoremap    <leader>t   :tabnew 
+nnoremap    <c-h>   :tabp<cr>
+nnoremap    <c-l>   :tabn<cr>
+nnoremap    <leader>tc  :tabclose<cr>
+nnoremap    <leader>to  :tabonly<cr>
+nnoremap    <leader>tm  :tabmove
 "" TIPS: `vim -p file1 file2` to open files in tabs
 
 "" TIPS: use gf to open file under the curser
 
 " fast copy
-nnoremap	Y	y$
-nnoremap	y"	yi"
-nnoremap	Y"	ya"
-nnoremap	y'	yi'
-nnoremap	Y'	ya'
-nnoremap	y)	yi)
-nnoremap	Y)	ya)
-nnoremap	y]	yi]
-nnoremap	Y]	ya]
-nnoremap	y<	yi<
-nnoremap	Y<	ya>
-nnoremap	y{	yi{
-nnoremap	Y{	ya{
+nnoremap    Y   y$
+nnoremap    y"  yi"
+nnoremap    Y"  ya"
+nnoremap    y'  yi'
+nnoremap    Y'  ya'
+nnoremap    y)  yi)
+nnoremap    Y)  ya)
+nnoremap    y]  yi]
+nnoremap    Y]  ya]
+nnoremap    y<  yi<
+nnoremap    Y<  ya>
+nnoremap    y{  yi{
+nnoremap    Y{  ya{
 
 
 """"""""""""""""""""

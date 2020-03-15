@@ -75,7 +75,8 @@ let g:airline_powerline_fonts = 1 "if you use font
 " auto-pair
 """"""""""""""""""""
 " https://github.com/jiangmiao/auto-pairs
-let g:AutoPairsFlyMode = 1  " e.g.: press } to fly to the next }
+let g:AutoPairsFlyMode = 0  " e.g.: press } to fly to the next }
+let g:AutoPairsShortcutFastWrap = '<leader>i'
 "let g:AutoPairsShortcutToggle = '<another key>'
 "
 """"""""""""""""""""
@@ -83,6 +84,7 @@ let g:AutoPairsFlyMode = 1  " e.g.: press } to fly to the next }
 """"""""""""""""""""
 "https://github.com/andymass/vim-matchup
 let g:matchup_enabled = 1
+nnoremap    y%  yi%
 
 
 """"""""""""""""""""
@@ -271,7 +273,8 @@ let g:syntastic_enable_balloons = 1
 " :help syntastic-checkers
 
 "" python
-"" pip install flake8
+"" pip install flake8 pylint
+let g:syntastic_python_checkers = ['pylint']
 
 "" c++
 let g:syntastic_cpp_checkers = []  " disable, use YCM instead

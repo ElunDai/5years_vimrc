@@ -1,0 +1,149 @@
+""""""""""""""""""""
+" settings
+""""""""""""""""""""
+set mouse=a  " allow mouse to control
+
+set history=3000
+set autoread  "auto read when source has been changed
+set timeoutlen=500  " time to wait short cut
+
+" line break
+"set textwidth=80 "auto new line
+"set nowrap "avoid auto change line
+
+""""""""""""""""""""
+" buffers
+""""""""""""""""""""
+set hidden  " change buffer without save
+set confirm  " ask to save other buffer when close vim
+
+""""""""""""""""""""
+" display
+""""""""""""""""""""
+" curser
+set ruler  " show the cursor position at right botton
+set cursorline
+
+" line number
+set nu  " show line number
+set rnu!  " rnu related show line number
+
+set scrolloff=3 "at lest 3 line around the cursr
+
+set ttimeoutlen=20 "shorten the pause when leaving insert mode
+""""""""""""""""""""
+" status
+""""""""""""""""""""
+set showcmd		" display incomplete commands
+
+
+""""""""""""""""""""
+" searching
+""""""""""""""""""""
+set incsearch		" do incremental searching
+set magic "use magic patern
+" case sensitive
+"" smartcase | ignorecase
+set ignorecase
+set incsearch
+set hlsearch  " hight light search
+" avoid flipping (useless?)
+"" lazyredraw | nolazyredraw
+"set lazyredraw 
+
+""""""""""""""""""""
+" input
+""""""""""""""""""""
+" tab or space
+set tabstop=4  " the length of a tab
+set shiftwidth=4 "when using <c-t> <c-d> in insert mode
+set expandtab "change tab into space
+set softtabstop=4 "easyer to backspace when expandtab set
+
+" indent setting
+"" autoindent -- Copy indent from current line when starting a new line
+"" smartindent -- Determin by syntax
+set smartindent
+"" TIPS: use :setpast and :setnopast to avoid mixup the indent
+
+""""""""""""""""""""
+" keymaps
+""""""""""""""""""""
+inoremap    <c-b>   <left>
+inoremap    <c-f>   <right>
+inoremap    <c-a>   <home>
+inoremap    <c-e>   <end>
+inoremap    <c-g>   <c-left>
+inoremap    <c-l>   <c-right>
+
+cnoremap    <c-b>   <left>
+cnoremap    <c-f>   <right>
+cnoremap    <c-a>   <home>
+cnoremap    <c-e>   <end>
+cnoremap    <c-g>   <c-left>
+cnoremap    <c-l>   <c-right>
+
+" input
+"" to support <c-c> trigger the InsertLeave autocmd
+inoremap    <c-c>   <esc>
+nnoremap    <space> i <esc>l
+nnoremap    <tab>   o<esc>
+"" input real tab in expandtab is set
+inoremap    ;<tab>   <c-v><tab>
+nnoremap    <c-j>   i<cr><esc>
+
+" add quote to worlds
+vnoremap    "   di"<c-r>""<esc>
+vnoremap    '   di'<c-r>"'<esc>
+
+"" ZX save
+nnoremap    ZX  :w<cr>
+"" ZA quit all with asking
+nnoremap    ZA  :qa<cr>
+" ZQ to only quite current tab or buffer
+nnoremap    ZQ  :q!<cr>
+
+" tab
+"" TIPS: tab means different layout, you can treat it
+""       as different workspace. If you want to edit
+""       multiple file, use buffer instead.
+"" openfile under the curser
+"nnoremap   gff <c-w>gf
+nnoremap    <c-p>   :tabp<cr>
+nnoremap    <c-n>   :tabn<cr>
+nnoremap    ;q  :tabclose<cr>
+nnoremap    ;to  :tabonly<cr>
+nnoremap    ;tm  :tabmove
+"" TIPS: `vim -p file1 file2` to open files in tabs
+
+"" TIPS: use gf to open file under the curser
+
+" fast copy
+nnoremap    Y   y$
+nnoremap    y"  yi"
+nnoremap    Y"  ya"
+nnoremap    y'  yi'
+nnoremap    Y'  ya'
+nnoremap    y)  yi)
+nnoremap    Y)  ya)
+nnoremap    y]  yi]
+nnoremap    Y]  ya]
+nnoremap    y<  yi<
+nnoremap    Y<  ya>
+nnoremap    y{  yi{
+nnoremap    Y{  ya{
+
+""""""""""""""""""""
+" vim command shortcuts
+""""""""""""""""""""
+" searching and replace
+"" replace
+nnoremap <leader>rp :.,$sm///gci<left><left><left><left><left>
+vnoremap <leader>rp :sm///gci<left><left><left><left><left>
+"" no highlight after search
+nnoremap <leader>h :nohls<cr>
+
+""""""""""""""""""""
+" idea vim only
+""""""""""""""""""""
+set clipboard+=ideaput
