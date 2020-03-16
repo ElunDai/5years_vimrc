@@ -93,8 +93,8 @@ inoremap    ;<tab>   <c-v><tab>
 nnoremap    <c-j>   i<cr><esc>
 
 " add quote to worlds
-vnoremap    "   di"<c-r>""<esc>
-vnoremap    '   di'<c-r>"'<esc>
+vnoremap    "   di""<esc>P
+vnoremap    '   di''<esc>P
 
 "" ZX save
 nnoremap    ZX  :w<cr>

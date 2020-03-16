@@ -50,6 +50,10 @@ set encoding=utf-8
 set mouse=a  " allow mouse to control
 
 set vb t_vb= "avoid beep
+if has("gui_running")
+    " avoid flash light
+    auto GuiEnter * set t_vb=
+endif
 
 set history=3000
 set autoread  "auto read when source has been changed
@@ -63,7 +67,7 @@ set timeoutlen=500  " time to wait short cut
 " buffers
 """"""""""""""""""""
 set hidden  " change buffer without save
-set confirm  " ask to save other buffer when close vim
+"set confirm  " ask to save other buffer when close vim
 " auto write changes: autowrite | autowriteall
 "set autowrite
 
